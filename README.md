@@ -1,5 +1,7 @@
 # W.I.P.
 
+![jester](media/jester_box_cpp_exception.jpg)
+
 ## Back to the Common
 
 - This is where "machine wide" includes are.
