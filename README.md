@@ -1,6 +1,6 @@
 # W.I.P.
 
-![jester](media/jester_box_cpp_exception.jpg)
+![jester](media/jester_box_cpp_exception.png)
 
 ## Back to the Common
 
