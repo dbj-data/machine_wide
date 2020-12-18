@@ -1,0 +1,6 @@
+[submodule "dbj"]
+	path = dbj
+	url = https://github.com/dbj-data/dbj.git
+[submodule "eastl_dbj"]
+	path = eastl_dbj
+	url = https://github.com/dbj-data/EASTL2020DBJ.git
