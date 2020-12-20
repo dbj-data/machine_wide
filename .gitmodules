@@ -4,3 +4,6 @@
 [submodule "eastl_dbj"]
 	path = eastl_dbj
 	url = https://github.com/dbj-data/EASTL2020DBJ.git
+[submodule "simplelog"]
+	path = simplelog
+	url = https://github.com/dbj-systems/dbj--simplelog.git
