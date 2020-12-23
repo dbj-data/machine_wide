@@ -7,3 +7,6 @@
 [submodule "simplelog"]
 	path = simplelog
 	url = https://github.com/dbj-systems/dbj--simplelog.git
+[submodule "wil"]
+	path = wil
+	url = https://github.com/microsoft/wil.git
