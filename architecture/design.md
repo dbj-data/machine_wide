@@ -1,4 +1,4 @@
-<h1>The Windows</h1>
+<h1>The Design</h1>
 
 - [1. Software Atchitecture Principles](#1-software-atchitecture-principles)
   - [1.1. Single OS](#11-single-os)
@@ -17,21 +17,21 @@
   - [1.10. Metastate](#110-metastate)
   - [1.11. Primary Objective](#111-primary-objective)
 
-The Requirement:
+Platform is the core requirement:
 
-The "Key Stake Holders" have decided the Business will be selling software systems and services to customers using Windows machines and/or Azure Cloud
+The "Key Stake Holders" have decided the Business will be selling software systems and services to customers using Windows platform and/or Azure Cloud platform.
 
 # 1. Software Atchitecture Principles 
 
 ## 1.1. Single OS
 
-Do not architect or develop "OS agnostic" software on any level, from macro to micro.
+Do not architect or develop "OS agnostic" software on any level, from macro to micro. Platform is fixed and it is Windows 10.
 
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is in active development and use. But mainly for Azure Linux customers.
 
 ## 1.2. Single API
 
-WIN32. Windows is WIN32. WIN32 is C API. Undefined C, close to C98.
+WIN32. Windows API is WIN32. WIN32 is C API. Undefined C, close to C98.
 
 ## 1.3. SEH
 

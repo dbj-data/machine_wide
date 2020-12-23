@@ -26,3 +26,8 @@ Git sub-modules are used
 
 - Be carefull not to develop in the master branch
 - Be carefull to use the master branch when including
+
+# What is WIL doing here?
+
+WIL is a treasure trove of using all sorts of realy important WIndows API's. In some pleaces it is using reallu low level legacy stuf (MS RPC),
+or complex stuff (COM). But things will be definitely and regularly "nicked" from WIL and transformed to some dbj win32 internals.
