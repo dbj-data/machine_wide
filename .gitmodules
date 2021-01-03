@@ -10,3 +10,7 @@
 [submodule "wil"]
 	path = wil
 	url = https://github.com/microsoft/wil.git
+
+[submodule "mg"]
+	path = mg
+	url = https://github.com/mattiasgustavsson/libs.git
