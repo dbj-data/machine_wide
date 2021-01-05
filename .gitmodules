@@ -14,3 +14,6 @@
 [submodule "mg"]
 	path = mg
 	url = https://github.com/mattiasgustavsson/libs.git
+[submodule "stb"]
+	path = stb
+	url = https://github.com/nothings/stb.git
