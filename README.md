@@ -22,12 +22,21 @@ Git sub-modules are used
 
 ### The Management
 
-- The development also happens here and that menas a lot of cruft. Potentially.
+- The development also happens here and that means a lot of cruft. Potentially.
 
 - Be carefull not to develop in the master branch
 - Be carefull to use the master branch when including
 
-# What is WIL doing here?
+## Why or Why Not is something in here
 
-WIL is a treasure trove of using all sorts of realy important WIndows API's. In some pleaces it is using reallu low level legacy stuf (MS RPC),
-or complex stuff (COM). But things will be definitely and regularly "nicked" from WIL and transformed to some dbj win32 internals.
+It all depoends how fast it has proven itself. Everything goes through [dbj-bench](https://github.com/dbj-data/dbj-bench) before being accepted.
+
+dbj-bench is built with Visual Studio and it has pretty wide variery of builds. Thus it is not simple. Again the sole purpose is to try and develop very precise benchmarking.
+
+# We need to talk about WIL
+
+[WIL](https://github.com/microsoft/wil) is a treasure trove for anyone using all sorts of realy important WIndows API's. In some pleaces it is using reallu low level legacy stuf (MS RPC), or complex stuff (COM).
+
+WIL is also very revealing on what MSFT top programers think of many thigs you also think about. Like for example `stl.h`. Therefore take some time and think whayt is NOT inside and what is inside.
+
+But "things" will be definitely and regularly "nicked" from WIL and transformed to some dbj win32 internals.
