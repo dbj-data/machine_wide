@@ -469,8 +469,8 @@ extern "C" {
 #define _CRT_NONSTDC_NO_DEPRECATE 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
-#define STRPOOL_MALLOC( ctx, size ) ( malloc( size ) )
-#define STRPOOL_FREE( ctx, ptr ) ( free( ptr ) )
+#define STRPOOL_MALLOC( ctx, size ) ( calloc( 1, size ) )   // DBJ 2021-01-14 ... it was malloc
+#define STRPOOL_FREE( ctx, ptr ) ( free( ptr ), ptr = NULL ) // DBJ 2021-01-14
 #endif
 
 
@@ -653,7 +653,7 @@ extern "C" {
 			}
 			if (size != 0) printf(", %dx%d", count, size);
 			printf(", { %d }\n", total);
-}
+		}
 		printf("\n\n");
 #endif
 
