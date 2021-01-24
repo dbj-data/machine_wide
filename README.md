@@ -2,6 +2,22 @@
 
 ![jester](media/jester_box_cpp_exception.png)
 
+#### DBJ_MACHINE_WIDE=D:\MACHINE_WIDE;
+
+- The most important and only user environment variable. 
+  - Please set it now to your machine location of the "machine_wide" repo.
+  - Important: notice the semicolon at the end of it.
+  - above is example from this machine
+- Please add it to the PATH user environment variable
+
+#### DBJ_SQLITE3=D:\MACHINE_WIDE\sqlite3\bin;
+
+- This is where sqlite3.dll is
+- This is where sqlite3.lib is
+
+- Please add it to the PATH user environment variable
+
+
 ## Back to the Common
 
 - This is where "machine wide" includes are.
