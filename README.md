@@ -1,36 +1,36 @@
-# W.I.P.
+<h1> MACHINE_WIDE is W.I.P. </h1>
 
 ![jester](media/jester_box_cpp_exception.png)
+
+> Quick Start Note: For full foreign repos, if they are not SubModules, please go to their GitHub locations. Here is just a source, used in Windows only builds. For building we use only Visual Studio. For every other "MACHINE_WIDE" stuff, if there are lib's or dll's they are in `~\MACHINE_WIDE\lib`. Please add it to your `/LIBPATH`. For happy Visual Studio building (clang-cl or cl) please your lib after the `/linker` switch.
+
+
 
 #### DBJ_MACHINE_WIDE=D:\MACHINE_WIDE;
 
 - The most important and only user environment variable. 
   - Please set it now to your machine location of the "machine_wide" repo.
   - Important: notice the semicolon at the end of it.
-  - above is example from this machine
+  - above is location from this machine
+    - If your machines does not have the D drive, use the subst command to "make fake" `D:` drive, Perfectly legal and usefull.
 - Please add it to the PATH user environment variable
 
-#### DBJ_SQLITE3=D:\MACHINE_WIDE\sqlite3\bin;
+#### D:\MACHINE_WIDE\lib;
 
-- This is where sqlite3.dll is
-- This is where sqlite3.lib is
-
-- Please add it to the PATH user environment variable
+- This is where sqlite3.dll is, sqlite3.lib is, etc.
+- Please add it to the `/LIBPATH` in your project setup.
 
 
 ## Back to the Common
 
 - This is where "machine wide" includes are.
-
 - Opposite to the "single header" philosophy.
-
-- "common headers" philosopohy
-
-- The common "stuff" is not repeated all arround in all the "single headers"
+- Here we are folowing the "common headers" philosopohy
+  - The common "stuff" is not repeated all arround in all the "single headers"
 
 ### Cluster of projects
 
-Git sub-modules are used 
+Wherever appropriate the Git sub-modules are used 
 
 1. the users/customers clone/pull all the common stuff they need in one go 
    1. from one place on their machines or one server
