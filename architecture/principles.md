@@ -1,7 +1,7 @@
 <h1>Architectural Principles</h1>
 
 ## Purpose
-Purpose of software architecture is the feasible path to the required software and the feasible path during the maintance stage in the life of it.
+Purpose of software architecture is the feasible path to the required software and the feasible path during the maintenance stage in the life of it.
 
 ## The programing language and software architect
 In IT systems in general, the programming language is not of primary importance. Architecture is.
