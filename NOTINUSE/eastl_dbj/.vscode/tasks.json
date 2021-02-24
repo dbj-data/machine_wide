@@ -1,0 +1,67 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "DEBUG_BUILD",
+			"command": "cl.exe",
+			"args": [
+				"/Gm-",
+				"/Zc:wchar_t",
+				"/nologo",
+				"/DDEBUG",
+				"/D_HAS_EXCEPTIONS=0",
+				"/GR-",
+				"/MDd",
+				"/std:c++17",
+				"/Zi",
+				"/I${workspaceFolder}\\include",
+				"/Fe:",
+				"${workspaceFolder}\\dbj_eastl_dbg.exe",
+				"${workspaceFolder}\\test\\**cpp",
+				"${workspaceFolder}\\source\\**cpp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "RELEASE_BUILD",
+			"command": "cl.exe",
+			"args": [
+				"/Gm-",
+				"/Zc:wchar_t",
+				"/nologo",
+				"/DNDEBUG",
+				"/D_HAS_EXCEPTIONS=0",
+				"/O2",
+				"/GR-",
+				"/MD",
+				"/std:c++17",
+				"/I${workspaceFolder}\\include",
+				"/Fe:",
+				"${workspaceFolder}\\dbj_eastl.exe",
+				"${workspaceFolder}\\test\\**cpp",
+				"${workspaceFolder}\\source\\**cpp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{A598CFF1-7F44-4971-8CCB-0C21E5CF0143}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\assert.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\dbj_allocator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\hashtable.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\intrusive_list.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\numeric_limits.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\red_black_tree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\string.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\source\thread_support.cpp" />
+  </ItemGroup>
+</Project>

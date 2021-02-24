@@ -2,7 +2,17 @@
 
 ![jester](media/jester_box_cpp_exception.png)
 
-> Quick Start Note: For full foreign repos, if they are not SubModules, please go to their GitHub locations. Here is just a source, used in Windows only builds. For building we use only Visual Studio. For every other "MACHINE_WIDE" stuff, if there are lib's or dll's they are in `~\MACHINE_WIDE\lib`. Please add it to your `/LIBPATH`. For happy Visual Studio building (clang-cl or cl) please your lib after the `/linker` switch.
+
+> 2021 FEB note: MS STL can be built and used in a so called "kernel" mode.** That is a "big deal"**. That means non standard C++ and non standard std lib, are delivered and maintained by Microsoft.
+> 
+> No C++ exceptions, and no RTTI
+> "kernel" mode does not require using the cl.exe `/kernel` switch. 
+> `CPP_UNWIND` is undefined if cl.exe switch `/DNO_EXCEPTIONS=1` is used
+> Also keywords: `try`,`throw` and `switch` are rendered non-existent
+> [RTTI](https://docs.microsoft.com/en-us/cpp/build/reference/gr-enable-run-time-type-information?view=msvc-160) is switched off by using `/GR-` cl.exe switch
+
+> Quick Start Note: For full foreign repos, if they are not SubModules, please go to their GitHub locations. Usually, here is just a source, used in Windows only builds. 
+> For building we use only Visual Studio. For every other "MACHINE_WIDE" stuff, if there are lib's or dll's they are in `~\MACHINE_WIDE\lib`. Please add it to your `/LIBPATH`. For happy Visual Studio building (clang-cl or cl) please your lib after the `/linker` switch.
 
 
 
@@ -12,7 +22,7 @@
   - Please set it now to your machine location of the "machine_wide" repo.
   - Important: notice the semicolon at the end of it.
   - above is location from this machine
-    - If your machines does not have the D drive, use the subst command to "make fake" `D:` drive, Perfectly legal and usefull.
+    - If your machines does not have the D drive, use the subst command to "make fake" `D:` drive, Perfectly legal and useful.
 - Please add it to the PATH user environment variable
 
 #### D:\MACHINE_WIDE\lib;
@@ -25,8 +35,8 @@
 
 - This is where "machine wide" includes are.
 - Opposite to the "single header" philosophy.
-- Here we are folowing the "common headers" philosopohy
-  - The common "stuff" is not repeated all arround in all the "single headers"
+- Here we are following the "common headers" philosophy
+  - The common "stuff" is not repeated "all around the place", in all the "single headers"
 
 ### Cluster of projects
 
@@ -40,14 +50,14 @@ Wherever appropriate the Git sub-modules are used
 
 - The development also happens here and that means a lot of cruft. Potentially.
 
-- Be carefull not to develop in the master branch
-- Be carefull to use the master branch when including
+- Be careful not to develop in the master branch
+- Be careful to use the master branch when including
 
 ## Why or Why Not is something in here
 
-It all depoends how fast it has proven itself. Everything goes through [dbj-bench](https://github.com/dbj-data/dbj-bench) before being accepted.
+It all depends how fast "something" in the code, has proven itself. Everything goes through [dbj-bench](https://github.com/dbj-data/dbj-bench) before being accepted.
 
-dbj-bench is built with Visual Studio and it has pretty wide variery of builds. Thus it is not simple. Again the sole purpose is to try and develop very precise benchmarking.
+dbj-bench is built with Visual Studio and it has pretty wide variety of builds. That is not simple. Again the sole purpose is to try and develop very precise benchmarking.
 
 # We need to talk about WIL
 

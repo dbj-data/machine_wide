@@ -1,0 +1,12 @@
+.vs
+x64
+x86
+Release
+Debug
+*.suo
+*.filters
+*.user
+*.ilk
+*.obj
+*.pdb
+*.exe

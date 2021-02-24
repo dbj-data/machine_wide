@@ -1,27 +1,27 @@
 <h1>The Design</h1>
 
-- [1. Software Atchitecture Principles](#1-software-atchitecture-principles)
+- [1. Software Architecture Principles](#1-software-architecture-principles)
   - [1.1. Single OS](#11-single-os)
   - [1.2. Single API](#12-single-api)
   - [1.3. SEH](#13-seh)
   - [1.4. Windows mechanisms and subsystems](#14-windows-mechanisms-and-subsystems)
-  - [1.5. Prefered System language](#15-prefered-system-language)
+  - [1.5. Preferred Windows System language circa 2021](#15-preferred-windows-system-language-circa-2021)
     - [1.5.1. Avoid C++ decorations that might "sink the Vasa".](#151-avoid-c-decorations-that-might-sink-the-vasa)
   - [1.6. Single IDE](#16-single-ide)
   - [1.7. MS STL](#17-ms-stl)
-    - [1.7.1. Be carefull to avoid std lib legacy labirynth](#171-be-carefull-to-avoid-std-lib-legacy-labirynth)
+    - [1.7.1. Be careful to avoid std lib legacy labyrinth](#171-be-careful-to-avoid-std-lib-legacy-labyrinth)
     - [1.7.2. SEH](#172-seh)
     - [1.7.3. clang-cl](#173-clang-cl)
   - [1.8. ISO C](#18-iso-c)
   - [1.9. Do not develop it if it exist](#19-do-not-develop-it-if-it-exist)
-  - [1.10. Metastate](#110-metastate)
+  - [1.10. VALSTAT](#110-valstat)
   - [1.11. Primary Objective](#111-primary-objective)
 
 Platform is the core requirement:
 
 The "Key Stake Holders" have decided the Business will be selling software systems and services to customers using Windows platform and/or Azure Cloud platform.
 
-# 1. Software Atchitecture Principles 
+# 1. Software Architecture Principles 
 
 ## 1.1. Single OS
 
@@ -39,7 +39,7 @@ Structured Exception Handling is intrinsic to WIN32 (and Windows). Use it.
 
 ## 1.4. Windows mechanisms and subsystems
 
-There is a miryad of WIN features subsystea and mechanisms. Investigate and use accordingly.
+There is a myriad of WIN features subsystems and mechanisms. Investigate and use accordingly.
 
 - Services
 - (D)COM(+)
@@ -49,20 +49,22 @@ There is a miryad of WIN features subsystea and mechanisms. Investigate and use 
 - WSH
 - MSMQ
 - Kernel
+- etc...
 
-Legacy API's
+Legacy:
 
 - ATL
 - comdef.h
 - ADO
 - OLE DB
 - ODBC
+- etc ...
 
-All works and all in use by a lot of customers.
+All works and all in use by a lot of customers. Over last few decades.
 
-## 1.5. Prefered System language
+## 1.5. Preferred Windows System language circa 2021
 
-Squarely and firmly: C++ . C was actively discouraged. Very recently there are some movement in the opposite direction, like C11/C17 official introduction into the cl.exe
+Squarely and firmly: C++ . C id and was actively discouraged. Very recently there are some movement in the opposite direction, like C11/C17 official introduction into the cl.exe
 
 ### 1.5.1. Avoid C++ decorations that might ["sink the Vasa"](https://www.stroustrup.com/P0977-remember-the-vasa.pdf).
 
@@ -83,24 +85,26 @@ Be pragmatic. Develop (and ask for) consistent set of requirements. Not for snaz
 
 Visual Studio (always the latest)
 
-VS Code is good editor/IDE for so called "full stack developers". NODE.JS, React, GO, Python, C# and such. It is developed by and geared towards non C++ projects. C/C++ Code extensions works but has a lot of bugs and issues as soon as one tries anything beyond trivial. It is developed by very small team of Type Script developers. Thus it is difficult to comunicate with them on non-trivial C++ compilation or development themes.
+VS Code is good editor/IDE for so called "full stack developers". NODE.JS, React, GO, Python, C# and such. It is developed by and geared towards non C++ projects. C/C++ Code extensions works but has a lot of bugs and issues as soon as one tries anything beyond trivial. It is developed by very small team of Type Script developers. Thus it is difficult to communicate with them on non-trivial C++ compilation or development themes.
 
 ## 1.7. MS STL
 
 Very fast when compiled in non C++ exceptions mode. No reason to use some other C++ libs collected around the GitHub. For example: MS STL std::vector is almost 50% faster vs EASTL vector. In release non C++ exceptions mode.
 
-### 1.7.1. Be carefull to avoid std lib legacy labirynth
+### 1.7.1. Be careful to avoid std lib legacy labyrinth
 
 - no <iostream>
 - no <system_error>
 - no <exception>
 - be very economical with std::string
-- do not be affraid of mixing into your C++ code, modern ISO C features
+- do not be afraid of mixing into your C++ code, modern ISO C features
   - [VLA](https://gustedt.wordpress.com/2014/09/08/dont-use-fake-matrices/)
   - [compound literals](https://gustedt.wordpress.com/?s=compound+literals)
-  - mature and usefull numerous `__attribute__(())` extensions
+  - mature and useful numerous `__attribute__(())` extensions
 
-Avoid C++ abstractions for the sake of abstractions.  Apparently Windows itself is developed in "C with classes" using cpp files. If want to get convinced what "grown ups" from MSFT think and how do they develop in C++, look up and study the [WIL](https://github.com/microsoft/wil) library. 
+Avoid C++ abstractions for the sake of abstractions.  Apparently the word is now, Windows itself is developed in "C with classes" using cpp files. I think that is a "kindergarten syndrome". Very little experience and very little Architecture.
+
+If you want to get a glimpse of what "grown ups" from MSFT think and how do they develop in C++, look up and study the [WIL](https://github.com/microsoft/wil) library. 
 
 ### 1.7.2. SEH
 
@@ -116,15 +120,15 @@ Use always. Contrary to cl.exe it allows for powerful mix and match of C11/17 an
 
 ## 1.9. Do not develop it if it exist
 
-- if it is free and open source then generaly yes but
+- if it is free and open source then generally yes but
   - that requires time for search and testing
   - sometimes so much time it is more feasible to develop it in house
 
-## 1.10. Metastate
+## 1.10. VALSTAT
 
-Wherever and whenever feasible use `metastate` and `valstat` as defined in [P2192R3](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2192r3.pdf).
+Wherever and whenever feasible use `valstat`, call return protocol. It C++ implementation is defined in [P2192R3](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2192r3.pdf).
 
-Defined and used in the "top level" headers, aka "dbj".
+Here, defined and used in the "top level" headers, aka "dbj".
 
 ## 1.11. Primary Objective
 
